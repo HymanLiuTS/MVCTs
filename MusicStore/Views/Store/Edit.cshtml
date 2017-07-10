@@ -1,0 +1,50 @@
+﻿@*@model Album
+@{
+    ViewBag.Title = "Edit";
+    String[] names = new String[] { "Hyman", "Tom" };
+    List<Album> albums=new List<Album>(){new Album(){Title = "Hello"}};
+    Album album = new Album() { Title = "Big" };
+}
+<ul>
+    @foreach (string a in names)
+    {
+        <li> The Name is @a.</li>
+    }
+    @foreach(Album a in albums){
+        <li>The Name is @a.Title</li>
+        <li>hyman@@codenest.cn</li> 
+    }
+    @{
+        <li> @(names).Length</li>   
+        <li>item_@names.Length</li>
+    }
+    @{
+        string message = "<script>alert('hello')</script>";
+        
+    }
+    <span>@Html.Raw(message)</span>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var message = "Hello @ViewBag.name";
+        $("message").html(message).show('slow');
+    });
+    </script>
+
+    <div id="message">
+        world
+    </div>
+
+    <span>1+2=@(1+2)</span>
+    <span>@Model.Title</span>
+</ul>
+<h2>Edit</h2>
+
+*@
+@{
+    Layout = "~/Views/Store/SiteLayout.cshtml";
+    ViewBag.Title = "The Layout";
+}
+<p>这是主体内容</p>
+@section footer{
+    <strong>footer</strong>
+}

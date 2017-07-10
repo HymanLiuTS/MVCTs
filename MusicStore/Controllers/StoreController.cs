@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicStore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +23,23 @@ namespace MusicStore.Controllers
         public String Details(int id)
         {
             return "Store.Details(),id=" + id ;
+        }
+
+        public ActionResult Edit(int id=0)
+        {
+            ViewBag.name = "Jerry";
+            Album album = new Album() { Title = "Big" };
+            return View(album);
+        }
+
+        public ActionResult Message()
+        {
+            ViewBag.Message = "This is a partical view.";
+            return PartialView();
+        }
+        public ActionResult Test()
+        {
+            return View();
         }
     }
 }
