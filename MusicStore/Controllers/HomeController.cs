@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicStore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,20 +11,25 @@ namespace MusicStore.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            
+            return View("~/Views/Home/NewIndex.cshtml");
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var albums = new List<Album>();
+            for (int i = 0; i < 10; i++)
+            {
+                albums.Add(new Album { Title = "product" + i });
+            }
+            return View(albums);
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Str = "Your contact page....";
+            Album a = new Album() { Title = "Hyman" };
+            ViewBag.Name = "Hyman";
             return View();
         }
     }
