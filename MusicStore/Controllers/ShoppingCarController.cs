@@ -23,5 +23,15 @@ namespace MusicStore.Controllers
             viewModel.TotalCost = products.Sum(p => p.Price);
             return View(viewModel);
         }
+        public ActionResult Test()
+        {
+            return View();
+        }
+
+        public ActionResult ParticalTest()
+        {
+            ViewBag.Message = "Hello World";
+            return PartialView();
+        }
     }
 }

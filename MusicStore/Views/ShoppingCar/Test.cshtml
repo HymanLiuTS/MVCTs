@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+    String Message = "<Script> alert('Hello') </Script>";
+    ViewBag.UserName = "\x3cScript\x3e alert(\x27pwnd\x27) \x3c/Script\x3e";
+}
+<script type="text/javascript">
+    $(function () {
+        var message = '@ViewBag.UserName';
+        $('#message').load('/ShoppingCar/ParticalTest');
+    });
+</script>
+<script>
+    function myfunc()
+    {
+        alert("1");
+    }
+</script>
+<script>
+    //myfunc();
+</script>
+<button>按钮</button>
+@ViewBag.UserName
+@Message
+<p id="message">异常</p>
+<h2>Test</h2>
+
