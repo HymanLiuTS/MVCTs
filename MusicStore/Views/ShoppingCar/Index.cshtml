@@ -1,0 +1,27 @@
+﻿@using MusicStore.Models
+@model MusicStore.Models.ShoppingCarViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Model.Message</h2>
+<fieldset>
+    <legend>Shopping Car</legend>
+    <table>
+        <caption>Products in car</caption>
+        <thead>
+            <tr><th>Product</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+                <tr><td>@product.Name</td><td>@product.Price</td></tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr><td><strong>Total</strong></td><td>@Model.TotalCost</td></tr>
+        </tfoot>
+    </table>
+</fieldset>
+
