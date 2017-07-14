@@ -12,8 +12,6 @@ namespace MusicStore.Models
         public virtual int ArtistId { get; set; }
         public virtual String Title { get; set; }
         public virtual decimal Price { get; set; }
-
-        public virtual String Description { get; set; }
         public virtual String AlbumUrl { get; set; }
         public virtual Genre Genre { get; set; }
         public virtual Artist Artist { get; set; }

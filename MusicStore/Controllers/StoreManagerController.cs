@@ -75,9 +75,15 @@ namespace MusicStore.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
-            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
-            return View(album);
+            //ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
+            //ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
+            AlbumEditViewModel model = new AlbumEditViewModel
+            {
+                AlbumEdit = album,
+                Artists = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId),
+                Geners = new SelectList(db.Genres, "GenreId", "Name", album.GenreId)
+            };
+            return View(model);
         }
 
         // POST: StoreManager/Edit/5
